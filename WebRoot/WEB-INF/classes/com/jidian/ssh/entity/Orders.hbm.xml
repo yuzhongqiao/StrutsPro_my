@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+  <hibernate-mapping>
+    	<class name="com.jidian.ssh.entity.Orders" table="t_orders"> 
+    	<id name="r_id" column="r_id">
+    		<generator class="identity"></generator>
+    	</id>
+    	<many-to-one name="Emp" class="com.jidian.ssh.entity.Emp" fetch="select" lazy="false">
+    		<column name="e_id"></column>
+    	</many-to-one>
+    	
+    	<many-to-one name="Client" class="com.jidian.ssh.entity.Client" fetch="select" lazy="false">
+    		<column name="c_id"></column>
+    	</many-to-one>
+    	
+    	<property name="r_time" type="java.lang.String" length="200"></property>
+    	<property name="r_is"  type="java.lang.Integer" ></property>
+    	
+    </class>
+    
+  </hibernate-mapping>

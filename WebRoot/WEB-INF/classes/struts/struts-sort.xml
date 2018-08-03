@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="sort" extends="struts-default,json-default">
+		<!-- 查看所有类别 -->
+		<action name="ShowSort" class="sortAction" method="ShowSort">
+			 <result type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+		
+		<!-- 添加类别 -->
+		<action name="AddSort" class="sortAction" method="AddSort">
+			 <result type="json">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+		
+		<!-- 根据名字查找有无-->
+		<action name="FindSortName" class="sortAction" method="FindSortName">
+			 <result type="json">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+		
+		<!-- 类别下架-->
+		<action name="DelSort" class="sortAction" method="DelSort">
+			 <result type="json">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+		
+		<!-- 类别恢复-->
+		<action name="RecoverSort" class="sortAction" method="RecoverSort">
+			 <result type="json">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+	
+	</package>
+</struts>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="orders" extends="struts-default,json-default">
+		
+		<!-- 查看订单-->
+		<action name="showOrders" class="ordersAction" method="showOrders">
+			 <result type="json">
+                <param name="root">list</param>
+            </result>
+		</action>
+		
+		<!-- 添加订单-->
+		<action name="addOrders" class="ordersAction" method="addOrders">
+			 <result type="json">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+		
+		<!-- 查看订单详细-->
+		<action name="showOrdersmx" class="ordersAction" method="showOrdersmx">
+			 <result type="json">
+                <param name="root">list</param>
+            </result>
+		</action>
+		
+		<!-- 添加订单详细-->
+		<action name="addOrdersmx" class="ordersAction" method="addOrdersmx">
+			 <result type="json">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+		
+		<!-- 提交订单-->
+		<action name="saveOrder" class="ordersAction" method="saveOrder">
+			 <result type="json">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+		
+		<!-- 删除订单详细-->
+		<action name="delOrdersmx" class="ordersAction" method="delOrdersmx">
+			 <result type="json">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+		
+		<!-- 放弃订单-->
+		<action name="delOrder" class="ordersAction" method="delOrder">
+			 <result type="json">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+		
+		<!-- 修改订单详细-->
+		<action name="uppOrdersmx" class="ordersAction" method="uppOrdersmx">
+			 <result type="json">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+	
+	</package>
+</struts>

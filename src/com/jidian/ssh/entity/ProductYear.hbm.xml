@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+  <hibernate-mapping>
+    
+    <class name="com.jidian.ssh.entity.ProductYear" table="t_productyear">
+    	<id name="y_id" column="y_id">
+    		<generator class="identity"></generator>
+    	</id>
+		<many-to-one name="Product" class="com.jidian.ssh.entity.Product" fetch="select" lazy="false">
+			<column name="p_id"></column>
+		</many-to-one>
+    	<property name="y_name" length="200" type="java.lang.String" ></property>
+    	<property name="y_price"  type="java.lang.Integer" ></property>
+    	
+    </class>
+    
+  </hibernate-mapping>

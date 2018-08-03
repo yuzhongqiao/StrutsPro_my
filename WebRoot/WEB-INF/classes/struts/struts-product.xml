@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="product" extends="struts-default,json-default">	
+		
+		<!-- 查看所有产品 -->
+		<action name="ShowProduct" class="productAction" method="ShowProduct">
+			 <result type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+		
+		<!-- 查看产品详细 -->
+		<action name="ShowProductSelect" class="productAction" method="ShowProductSelect">
+			 <result type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+		
+		<!-- 查看产品年份 -->
+		<action name="ShowProductYear" class="productAction" method="ShowProductYear">
+			 <result type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+		
+		<!-- 得到产品类别-->
+		<action name="FindSort" class="productAction" method="FindSort">
+			 <result type="json">
+			 	<param name="root">list</param>
+			</result>
+		</action>
+		
+		<!-- 产品名和产地不能重复 -->
+		<action name="checkRepeat" class="productAction" method="checkRepeat">
+			 <result  type="json">
+			 	<param name="root">mydata</param>
+			</result>
+		</action>
+		
+		<!-- 添加商品-->
+		<action name="addProduct" class="productAction" method="addProduct">
+			 <result  type="json">
+			 	<param name="root">mydata</param>
+			</result>
+		</action>
+		
+		<!-- 下架商品-->
+		<action name="delProduct" class="productAction" method="delProduct">
+			 <result  type="json">
+			 	<param name="root">mydata</param>
+			</result>
+		</action>
+		
+		<!-- 上架商品-->
+		<action name="recoverProduct" class="productAction" method="recoverProduct">
+			 <result  type="json">
+			 	<param name="root">mydata</param>
+			</result>
+		</action>
+		
+		<!-- 查看撤销商品-->
+		<action name="ShowdelProduct" class="productAction" method="ShowdelProduct">
+			 <result  type="json">
+			 	<param name="root">result</param>
+			</result>
+		</action>
+		
+		<!-- 得到修改的信息-->
+		<action name="findId" class="productAction" method="findId">
+			 <result  type="json">
+			 	<param name="root">product</param>
+			</result>
+		</action>
+		
+		<!-- 修改商品-->
+		<action name="uppProduct" class="productAction" method="uppProduct">
+			 <result  type="json">
+			 	<param name="root">mydata</param>
+			</result>
+		</action>
+		
+		<action name="getProYear" class="productAction" method="getProYear">
+			 <result  type="json">
+			 	<param name="root">list</param>
+			</result>
+		</action>
+		
+		<action name="uppPrice" class="productAction" method="uppPrice">
+			 <result  type="json">
+			 	<param name="root">mydata</param>
+			</result>
+		</action>
+		
+		<action name="getProductName" class="productAction" method="getProductName">
+			 <result  type="json">
+			 	<param name="root">list</param>
+			</result>
+		</action>
+		
+		<action name="productSeach" class="productAction" method="productSeach">
+			 <result  type="json">
+			 	<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="getProductArea" class="productAction" method="getProductArea">
+			 <result  type="json">
+			 	<param name="root">list</param>
+			</result>
+		</action>
+		
+		<action name="showProductAll" class="productAction" method="showProductAll">
+			 <result  type="json">
+			 	<param name="root">list</param>
+			</result>
+		</action>
+		
+		<action name="getPrice" class="productAction" method="getPrice">
+			 <result  type="json">
+			 	<param name="root">mydata</param>
+			</result>
+		</action>
+		
+		<action name="findId2" class="productAction" method="findId2">
+			<result name="success">/inproduct/addInproduct.jsp</result>
+		</action>
+		
+	</package>
+</struts>

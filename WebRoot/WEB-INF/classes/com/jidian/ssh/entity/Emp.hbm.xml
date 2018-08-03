@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+  <hibernate-mapping>
+    
+    <class name="com.jidian.ssh.entity.Emp" table="t_emp">	
+    	<id name="e_id" column="e_id">
+    		<generator class="identity"></generator>
+    	</id>
+    	
+    	
+    	 <many-to-one name="Part" class="com.jidian.ssh.entity.Part"
+    	 	fetch="select" lazy="false">
+			<column name="p_id" />
+		</many-to-one>
+    	 
+    	<property name="e_loginname" length="200" type="java.lang.String" ></property>
+    	<property name="e_psw" length="200" type="java.lang.String" ></property>
+    	<property name="e_img" length="200" type="java.lang.String" ></property>
+    	<property name="e_sex" length="2" type="java.lang.String" ></property>
+    	<property name="e_flag"  type="java.lang.Integer" ></property>
+    	<property name="e_admin"  type="java.lang.Integer" ></property>
+    	<property name="e_remark" length="200" type="java.lang.String" ></property>
+    	<property name="e_truename" length="200" type="java.lang.String" ></property>
+    	<property name="e_is"  type="java.lang.Integer" ></property>
+    	
+    	
+		
+		
+		 
+    </class>
+    
+  </hibernate-mapping>

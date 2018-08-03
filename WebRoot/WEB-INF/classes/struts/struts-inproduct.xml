@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="inproduct" extends="struts-default,json-default">
+		
+		<!-- 添加入库信息  -->
+		<action name="addInproduct" class="inproductAction" method="addInproduct">
+			 <result type="json">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+		
+		<!-- 查看入库信息  -->
+		<action name="showInproduct" class="inproductAction" method="showInproduct">
+			 <result type="json">
+                <param name="root">list</param>
+            </result>
+		</action>
+		
+		<!-- 得到库存数量  -->
+		<action name="findStockNum" class="inproductAction" method="findStockNum">
+			 <result type="json">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+		
+		<!-- 查看出库信息  -->
+		<action name="showOutproduct" class="inproductAction" method="showOutproduct">
+			 <result type="json">
+                <param name="root">list</param>
+            </result>
+		</action>
+		
+	</package>
+</struts>

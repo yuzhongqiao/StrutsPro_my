@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:context="http://www.springframework.org/schema/context"
+      xmlns:aop="http://www.springframework.org/schema/aop"
+      xmlns:tx="http://www.springframework.org/schema/tx"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans 
+      http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-2.5.xsd
+	  http://www.springframework.org/schema/aop 
+	  http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+	   http://www.springframework.org/schema/tx 
+      http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	
+	<!-- 部门  -->
+	<bean id="partDao" class="com.jidian.ssh.dao.impl.PartDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="partService" class="com.jidian.ssh.service.impl.PartServiceImpl">
+		<property name="dao" ref="partDao"></property>
+	</bean>
+	
+	<bean id="partAction" class="com.jidian.ssh.action.PartAction"  scope="prototype">
+		<property name="service" ref="partService"></property>
+	</bean>
+
+	<!-- 员工  -->
+	<bean id="empDao" class="com.jidian.ssh.dao.impl.EmpDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="empService" class="com.jidian.ssh.service.impl.EmpServiceImpl">
+		<property name="empDao" ref="empDao"></property>
+	</bean>
+	
+	<bean id="empAction" class="com.jidian.ssh.action.EmpAction"  scope="prototype">
+		<property name="empService" ref="empService"></property>
+	</bean>
+	
+	<!-- 产品类别  -->
+	<bean id="sortDao" class="com.jidian.ssh.dao.impl.SortDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="sortService" class="com.jidian.ssh.service.impl.SortServiceImpl">
+		<property name="sortDao" ref="sortDao"></property>
+	</bean>
+	
+	<bean id="sortAction" class="com.jidian.ssh.action.SortAction"  scope="prototype">
+		<property name="sortService" ref="sortService"></property>
+	</bean>
+	
+	<!-- 产品  -->
+	<bean id="productDao" class="com.jidian.ssh.dao.impl.ProductDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="productService" class="com.jidian.ssh.service.impl.ProductServiceImpl">
+		<property name="productDao" ref="productDao"></property>
+	</bean>
+	
+	<bean id="productAction" class="com.jidian.ssh.action.ProductAction"  scope="prototype">
+		<property name="productService" ref="productService"></property>
+	</bean>
+	
+	<!-- 入库  -->
+	<bean id="inproductDao" class="com.jidian.ssh.dao.impl.InproductDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="inproductService" class="com.jidian.ssh.service.impl.InproductServiceImpl">
+		<property name="inproductDao" ref="inproductDao"></property>
+	</bean>
+	
+	<bean id="inproductAction" class="com.jidian.ssh.action.InProductAction"  scope="prototype">
+		<property name="inproductService" ref="inproductService"></property>
+	</bean>
+	
+	<!-- 客户  -->
+	<bean id="clientDao" class="com.jidian.ssh.dao.impl.ClientDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="clientService" class="com.jidian.ssh.service.impl.ClientServiceImpl">
+		<property name="clientDao" ref="clientDao"></property>
+	</bean>
+	
+	<bean id="clientAction" class="com.jidian.ssh.action.ClientAction"  scope="prototype">
+		<property name="clientService" ref="clientService"></property>
+	</bean>
+	
+	<!-- 订单  -->
+	<bean id="ordersDao" class="com.jidian.ssh.dao.impl.OrdersDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="ordersService" class="com.jidian.ssh.service.impl.OrdersServiceImpl">
+		<property name="ordersDao" ref="ordersDao"></property>
+	</bean>
+	
+	<bean id="ordersAction" class="com.jidian.ssh.action.OrdersAction"  scope="prototype">
+		<property name="ordersService" ref="ordersService"></property>
+	</bean>
+	
+	<!-- 业绩  -->
+	<bean id="reportDao" class="com.jidian.ssh.dao.impl.ReportDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="reportService" class="com.jidian.ssh.service.impl.ReportServiceImpl">
+		<property name="reportDao" ref="reportDao"></property>
+		<property name="empDao" ref="empDao" />
+		<property name="ordersDao" ref="ordersDao" />
+		<property name="partDao" ref="partDao" />
+		<property name="productDao" ref="productDao" />
+		<property name="sortDao" ref="sortDao" />
+	</bean>
+	
+	<bean id="reportAction" class="com.jidian.ssh.action.ReportAction"  scope="prototype">
+		<property name="reportService" ref="reportService"></property>
+	</bean>
+	
+</beans>

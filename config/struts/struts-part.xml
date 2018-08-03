@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="part" extends="struts-default,json-default">
+		
+		<!-- 查看所有部门 -->
+		<action name="ShowPart" class="partAction" method="ShowPart">
+			 <result type="json">
+                <param name="root">result<!-- result是action中设置的变量名，也是页面需要返回的数据，该变量必须有getter方法 --></param>
+            </result>
+		</action>
+		
+		<!-- 根据名字查看部门 -->
+		<action name="FindPartName" class="partAction" method="FindPartName">
+			 <result type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+		
+		<!-- 添加部门 -->
+		<action name="AddPart" class="partAction" method="AddPart">
+			<result type="json">
+                <param name="root">result1</param>
+            </result>
+		</action>
+		
+		<!-- 加载部门信息 -->
+		<action name="FindPartById" class="partAction" method="FindPartById">
+			<result name="success">/part/upp.jsp</result>
+		</action>
+		
+		<!-- 修改部门 -->
+		<action name="UpdatePart" class="partAction" method="UpdatePart">
+			<result type="json">
+                <param name="root">result1</param>
+            </result>
+		</action>
+		
+		<!-- 撤销部门 -->
+		<action name="removePart" class="partAction" method="removePart">
+			
+		</action>
+		
+		<!-- 查看已撤销部门 -->
+		<action name="ShowRemove" class="partAction" method="ShowRemove">
+			 <result type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+		
+		<!-- 恢复部门 -->
+		<action name="recoverPart" class="partAction" method="recoverPart">
+			<result type="json">
+                <param name="root">result1</param>
+            </result>
+		</action>
+		
+		
+		<!-- 查看所有产品 -->
+		<action name="ShowProduct" class="action.ProductAction" method="ShowProduct">
+			 <result type="json">
+                <param name="root">result<!-- result是action中设置的变量名，也是页面需要返回的数据，该变量必须有setter和getter方法 --></param>
+            </result>
+		</action>
+		
+		<!-- 查看产品详细 -->
+		<action name="ShowProductSelect" class="action.ProductAction" method="ShowProductSelect">
+			 <result type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+		
+		<!-- 查看产品年份 -->
+		<action name="ShowProductYear" class="action.ProductAction" method="ShowProductYear">
+			 <result type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+	</package>
+</struts>

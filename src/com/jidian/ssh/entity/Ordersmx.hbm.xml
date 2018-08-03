@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+  <hibernate-mapping>
+    <class name="com.jidian.ssh.entity.Ordersmx" table="t_ordersmx"> 
+    	<id name="x_id" column="x_id">
+    		<generator class="identity"></generator>
+    	</id>
+    	<many-to-one name="orders" class="com.jidian.ssh.entity.Orders" fetch="select" lazy="false">
+    		<column name="r_id"></column>
+    	</many-to-one>
+    	
+    	<many-to-one name="product" class="com.jidian.ssh.entity.Product" fetch="select" lazy="false">
+    		<column name="p_id"></column>
+    	</many-to-one>
+    	
+    	<many-to-one name="productyear" class="com.jidian.ssh.entity.ProductYear" fetch="select" lazy="false">
+    		<column name="y_id"></column>
+    	</many-to-one>
+
+    	<property name="x_count" type="java.lang.Integer"></property>
+    	<property name="x_price" type="java.lang.Integer"></property>
+    	
+    </class>
+    
+  </hibernate-mapping>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <listener>
+  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+  <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>classpath:spring/applicationContext.xml</param-value>
+  </context-param>
+  
+ <filter>
+ 	<filter-name>openSessionInViewFilter</filter-name>
+ 	<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+ </filter>
+  
+  <filter-mapping>
+  	<filter-name>openSessionInViewFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>struts2</filter-name>
+  	<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>struts2</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>jspFilter</filter-name>
+  	<filter-class>util.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+		<filter-name>jspFilter</filter-name>
+		<url-pattern>/main/*</url-pattern>
+		<url-pattern>/part/*</url-pattern>
+		<url-pattern>/emp/*</url-pattern>
+		<url-pattern>/product/*</url-pattern>
+		<url-pattern>/inproduct/*</url-pattern>
+		<url-pattern>/client/*</url-pattern>
+		<url-pattern>/orders/*</url-pattern>
+		<url-pattern>/report/*</url-pattern>	
+	</filter-mapping>
+  
+</web-app>

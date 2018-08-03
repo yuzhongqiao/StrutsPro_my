@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="e" extends="struts-default,json-default">
+		<!-- 员工管理 -->
+		<action name="ShowEmp" class="empAction" method="ShowEmp">
+			 <result type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+				
+		<!-- 查看部门所有数量 -->
+		<action name="ShowPartCount" class="empAction" method="ShowPartCount">
+			 <result type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+		
+		<!-- 增加-得到全部部门-->
+		<action name="FindPart" class="empAction" method="FindPart">
+			<result  name="success"> /emp/add.jsp</result>
+		</action>
+		
+		<action name="FindEmpByPid" class="empAction" method="FindEmpByPid">
+			<result type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+		
+		<!-- 删除-得到全部部门 -->
+		<action name="FindPart2" class="empAction" method="FindPart2">
+			<result  name="success"> /emp/back.jsp</result>
+		</action>
+		
+		<!-- 分类查看-得到部门 -->
+		<action name="FindPart3" class="empAction" method="FindPart">
+			<result type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+		
+		<!-- 根据名字核对是否已经存在 -->
+		<action name="getENameCount" class="empAction" method="getENameCount">
+			<result type="json" name="resultNum">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+		
+		<!-- 根据部门编号核对部门主管是否已经存在 -->
+		<action name="getPCount" class="empAction" method="getPCount">
+			<result type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+		
+		<!-- 增加员工 -->
+		<action name="AddEmp" class="empAction" method="AddEmp">
+			<result>/123.jsp</result>
+		</action>
+		
+		<!-- 通过ID查找员工 -->
+		<action name="findEmpById" class="empAction" method="findEmpById">
+			<result  name="success"> /emp/upp.jsp</result>
+		</action>
+		
+		<!-- 修改员工信息 -->
+		<action name="UpDateEmp" class="empAction" method="UpDateEmp">
+			<result> /123.jsp</result>
+		</action>
+		
+		<!-- 得到客户的数量 -->
+		<action name="getClientCount" class="empAction" method="getClientCount">
+			 <result type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+		
+		<!-- 撤销员工 -->
+		<action name="delEmp" class="empAction" method="delEmp">
+			<result type="json">
+				<param name="root">mydata</param>
+			</result>
+		</action>
+		
+		<!-- 查找离职的员工 -->
+		<action name="FindEmpByIs" class="empAction" method="FindEmpByIs">
+			 <result type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+		
+		<!-- 恢复员工 -->
+		<action name="recoverEmp" class="empAction" method="recoverEmp">
+			<result type="json">
+				<param name="root">mydata</param>
+			</result>
+		</action>
+		
+		<!-- 模糊查询员工姓名 -->
+		<action name="GetNameByLike" class="empAction" method="GetNameByLike">
+		
+		</action>
+		
+		<!-- 条件查询 -->
+		<action name="empSeach" class="empAction" method="empSeach">
+			 <result type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+</package>
+</struts>

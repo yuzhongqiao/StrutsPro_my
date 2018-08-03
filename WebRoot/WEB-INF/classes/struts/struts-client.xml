@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="client" extends="struts-default,json-default">
+		
+		<!-- 查看客户-->
+		<action name="showClientByEid" class="clientAction" method="showClientByEid">
+			 <result type="json">
+                <param name="root">list</param>
+            </result>
+		</action>
+		
+		<!-- 添加客户 -->
+		<action name="addClient" class="clientAction" method="addClient">
+			 <result type="json">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+		
+		<!-- 查看已删除客户-->
+		<action name="showDelClient" class="clientAction" method="showDelClient">
+			 <result type="json">
+                <param name="root">list</param>
+            </result>
+		</action>
+		
+		<!-- 删除客户-->
+		<action name="delClient" class="clientAction" method="delClient">
+			 <result type="json">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+		
+		<!-- 得到客户信息-->
+		<action name="findClientByCid" class="clientAction" method="findClientByCid">
+			<result name="success">/client/uppClient.jsp</result>
+		</action>
+		
+		<!-- 修改客户-->
+		<action name="uppClient" class="clientAction" method="uppClient">
+			 <result type="json">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+		
+		<!-- 得到信息-->
+		<action name="findClientByCid1" class="clientAction" method="findClientByCid1">
+			<result type="json">
+				<param name="root">mydata</param>
+			</result>
+		</action>
+		
+		<!-- 得到信息-->
+		<action name="findClientByCid2" class="clientAction" method="findClientByCid">
+			<result name="success">/client/recoverClient.jsp</result>
+		</action>
+		
+		<!-- 得到信息-->
+		<action name="backClient" class="clientAction" method="backClient">
+			 <result type="json">
+                <param name="root">mydata</param>
+            </result>
+		</action>
+	
+	</package>
+</struts>

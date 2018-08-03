@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+  <hibernate-mapping>
+    
+    <class name="com.jidian.ssh.entity.Stock" table="t_stock"> 
+    	<id name="k_id" column="k_id">
+    		<generator class="identity"></generator>
+    	</id>
+    	<many-to-one name="Product" class="com.jidian.ssh.entity.Product" fetch="select" lazy="false">
+    		<column name="p_id"></column>
+    	</many-to-one>
+    	<property name="k_sum"  type="java.lang.Integer" ></property>
+    	
+    </class>
+    
+  </hibernate-mapping>

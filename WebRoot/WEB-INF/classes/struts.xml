@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<include file="struts/struts-part.xml"></include>
+	<include file="struts/struts-emp.xml"></include>
+	<include file="struts/struts-sort.xml"></include>
+	<include file="struts/struts-product.xml"></include>
+	<include file="struts/struts-inproduct.xml"></include>
+	<include file="struts/struts-client.xml"></include>
+	<include file="struts/struts-orders.xml"></include>
+	<include file="struts/struts-report.xml"></include>
+	<include file="struts/struts-login.xml"></include>
+</struts>

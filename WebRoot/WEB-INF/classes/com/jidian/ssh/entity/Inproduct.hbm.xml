@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+  <hibernate-mapping>
+    
+    <class name="com.jidian.ssh.entity.Inproduct" table="t_inproduct"> 
+    	<id name="d_id" column="d_id">
+    		<generator class="identity"></generator>
+    	</id>
+    	<many-to-one name="Product" class="com.jidian.ssh.entity.Product" fetch="select" lazy="false">
+    		<column name="p_id"></column>
+    	</many-to-one>
+    	
+    	<many-to-one name="Emp" class="com.jidian.ssh.entity.Emp" fetch="select" lazy="false">
+    		<column name="e_id"></column>
+    	</many-to-one>
+    	
+    	<property name="d_remark" type="java.lang.String" length="200"></property>
+    	<property name="d_number"  type="java.lang.Integer" ></property>
+    	<property name="d_time" type="java.lang.String" length="200"></property>
+    	
+    </class>
+    
+  </hibernate-mapping>

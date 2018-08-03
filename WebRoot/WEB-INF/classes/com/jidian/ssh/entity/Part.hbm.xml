@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+  <hibernate-mapping>
+    
+    <class name="com.jidian.ssh.entity.Part" table="t_part">
+    	
+    	<id name="p_id" column="p_id">
+    		<generator class="identity"></generator>
+    	</id>
+    	
+    	<property name="p_name" length="200" type="java.lang.String" ></property>
+    	<property name="p_remark" length="200" type="java.lang.String" ></property>
+    	<property name="p_is"  type="java.lang.Integer" ></property>
+    	
+    </class>
+    
+  </hibernate-mapping>
